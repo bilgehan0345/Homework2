@@ -44,7 +44,7 @@ void gaza_bas() { // Aracın hızını arttıran fonk, şarjı azaltır, sıcakl
     motor_sicakligi += 5;
     batarya_sicakligi += 2;
 
-    int yeni_hiz = anlik_hiz;
+    float yeni_hiz = anlik_hiz;
     if (anlik_hiz > 70) {
         anlik_hiz = 70.f;
         eklenecek_hiz = yeni_hiz - anlik_hiz;
@@ -70,7 +70,7 @@ void frene_bas() { // Aracın hızını azaltan fonk, sıcaklığı düşürür
     motor_sicakligi -= 3;
     batarya_sicakligi -= 1;
 
-    int yeni_hiz = anlik_hiz;
+    float yeni_hiz = anlik_hiz;
     if (anlik_hiz < 0) {
         anlik_hiz = 0.0f;
         azaltilcak_hiz = yeni_hiz - anlik_hiz;
@@ -103,7 +103,7 @@ void rejen_fren() { // Aracın hızını azaltıp şarjı arttıran fonk, sıcak
         sarj_yuzdesi = 100;
     }
 
-    int yeni_hiz = anlik_hiz;
+    float yeni_hiz = anlik_hiz;
     if (anlik_hiz < 0.0) {
         anlik_hiz = 0;
         azaltilacak_hiz = yeni_hiz - anlik_hiz;
@@ -160,3 +160,4 @@ void sistemi_kur(float baslangic_sicakligi, int baslangic_sarji) { // Değişken
     sarj_yuzdesi = baslangic_sarji; 
 
 }
+
